@@ -5,6 +5,7 @@ interface CircularProgressBarProps {
   circleColor?: string;
   progressColor?: string;
 }
+
 const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   progress,
   size = 120,
@@ -16,6 +17,7 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
   const radius = center - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
   const progressOffset = circumference - (progress / 100) * circumference;
+
   return (
     <div className="relative" style={{ width: size, height: size }}>
       <svg className="w-full h-full -rotate-90" viewBox={`0 0 ${size} ${size}`}>
@@ -51,4 +53,5 @@ const CircularProgressBar: React.FC<CircularProgressBarProps> = ({
     </div>
   );
 };
+
 export default CircularProgressBar;

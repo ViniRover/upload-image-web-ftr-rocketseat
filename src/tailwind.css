@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
 @theme {
   --font-inter: Inter;
 
@@ -10,4 +16,13 @@
   --shadow-shape-content: 0px 0px 0px 1px rgba(0, 0, 0, 0.25), inset 0px 1px 0px rgba(255, 255, 255, 0.02), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
 
   --backdrop-opacity-2: 0.02;
+
+  --animate-border: border 2s linear infinite;
+
+}
+
+@keyframes border {
+  100% {
+    --border-angle: 360deg;
+  }
 }
